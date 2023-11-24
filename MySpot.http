@@ -1,0 +1,31 @@
+@url = http://localhost:5035
+
+###
+GET {{url}}/reservations
+
+###
+GET {{url}}/reservations/1
+
+###
+POST {{url}}/reservations
+Content-Type: application/json
+
+{
+    "parkingSpotId": "00000000-0000-0000-0000-000000000001",
+    "date": "2023-11-26",
+    "employeeName": "Joe Dou",
+    "licencePlate": "XYZ123"
+}
+
+###
+PUT {{url}}/reservations/1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "da"
+    "licencePlate": "XYZzz"
+}
+
+###
+DELETE {{url}}/reservations/1

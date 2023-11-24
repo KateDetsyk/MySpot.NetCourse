@@ -1,0 +1,12 @@
+C:\src\MySpot\MySpot.Core\bin\Debug\net6.0\MySpot.Core.deps.json
+C:\src\MySpot\MySpot.Core\bin\Debug\net6.0\MySpot.Core.dll
+C:\src\MySpot\MySpot.Core\bin\Debug\net6.0\MySpot.Core.pdb
+C:\src\MySpot\MySpot.Core\obj\Debug\net6.0\MySpot.Core.csproj.AssemblyReference.cache
+C:\src\MySpot\MySpot.Core\obj\Debug\net6.0\MySpot.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\src\MySpot\MySpot.Core\obj\Debug\net6.0\MySpot.Core.AssemblyInfoInputs.cache
+C:\src\MySpot\MySpot.Core\obj\Debug\net6.0\MySpot.Core.AssemblyInfo.cs
+C:\src\MySpot\MySpot.Core\obj\Debug\net6.0\MySpot.Core.csproj.CoreCompileInputs.cache
+C:\src\MySpot\MySpot.Core\obj\Debug\net6.0\MySpot.Core.dll
+C:\src\MySpot\MySpot.Core\obj\Debug\net6.0\MySpot.Core.pdb
+C:\src\MySpot\MySpot.Core\obj\Debug\net6.0\ref\MySpot.Core.dll
+C:\src\MySpot\MySpot.Core\bin\Debug\net6.0\ref\MySpot.Core.dll
