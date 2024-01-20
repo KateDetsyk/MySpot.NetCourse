@@ -7,7 +7,7 @@ namespace MySpot.Application
     {
         public static IServiceCollection AddAplication(this IServiceCollection services)
         {
-            services.AddSingleton<IReservationService, ReservationService>();
+            services.AddScoped<IReservationService, ReservationService>();
             
             return services;
         }

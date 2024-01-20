@@ -9,4 +9,5 @@ C:\src\MySpot\MySpot.Core\obj\Debug\net6.0\MySpot.Core.csproj.CoreCompileInputs.
 C:\src\MySpot\MySpot.Core\obj\Debug\net6.0\MySpot.Core.dll
 C:\src\MySpot\MySpot.Core\obj\Debug\net6.0\MySpot.Core.pdb
 C:\src\MySpot\MySpot.Core\obj\Debug\net6.0\ref\MySpot.Core.dll
-C:\src\MySpot\MySpot.Core\bin\Debug\net6.0\ref\MySpot.Core.dll
+C:\src\MySpot\MySpot.Core\obj\Debug\net6.0\MySpot.Core.sourcelink.json
+C:\src\MySpot\MySpot.Core\obj\Debug\net6.0\refint\MySpot.Core.dll

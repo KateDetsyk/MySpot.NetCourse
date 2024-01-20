@@ -8,5 +8,13 @@ namespace MySpot.Infrastructure.DAL
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<WeeklyParkingSpot> WeeklyParkingSpots { get; set; }
 
+        public MySpotDbContext(DbContextOptions<MySpotDbContext> options) : base(options)
+        { 
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
+        }
     }
 }

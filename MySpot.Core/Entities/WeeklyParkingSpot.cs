@@ -5,7 +5,7 @@ namespace MySpot.Core.Entities;
 
 public class WeeklyParkingSpot
 {
-    public Guid Id { get; }
+    public ParkingSpotId Id { get; }
 
     public Week Week { get; private set; }
 

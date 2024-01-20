@@ -1,4 +1,5 @@
-﻿using MySpot.Core.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using MySpot.Core.Entities;
 using MySpot.Core.Repositories;
 using MySpot.Core.ValueObjects;
 
@@ -6,24 +7,41 @@ namespace MySpot.Infrastructure.DAL.Repositories
 {
     internal sealed class PostgresWeeklyParkingSpotRepository : IWeeklyParkingSpotRepository
     {
-        public void Add(WeeklyParkingSpot weeklyParkingSpot)
+        private readonly MySpotDbContext _dbContext;
+        private readonly DbSet<WeeklyParkingSpot> _weeklyParkingSpots;
+
+        public PostgresWeeklyParkingSpotRepository(MySpotDbContext dbContext)
         {
-            throw new NotImplementedException();
+            _dbContext = dbContext;
+            _weeklyParkingSpots = _dbContext.WeeklyParkingSpots;
         }
+
+        public IEnumerable<WeeklyParkingSpot> GetAll() 
+            => _weeklyParkingSpots.Include(x => x.Reservations).ToList();
+
+        public IEnumerable<WeeklyParkingSpot> GetByWeek(Week week) 
+            => _weeklyParkingSpots
+            .Include(x => x.Reservations)
+            .Where(x => x.Week == week)
+            .ToList();
 
         public WeeklyParkingSpot Get(ParkingSpotId id)
         {
-            throw new NotImplementedException();
+            return _weeklyParkingSpots
+            .Include(x => x.Reservations)
+            .SingleOrDefault(x => x.Id == id);
         }
 
-        public IEnumerable<WeeklyParkingSpot> GetAll()
+        public void Add(WeeklyParkingSpot weeklyParkingSpot)
         {
-            throw new NotImplementedException();
+            _weeklyParkingSpots.Add(weeklyParkingSpot);
+            _dbContext.SaveChanges();
         }
 
         public void Update(WeeklyParkingSpot weeklyParkingSpot)
         {
-            throw new NotImplementedException();
+            _weeklyParkingSpots.Update(weeklyParkingSpot);
+            _dbContext.SaveChanges();
         }
     }
 }

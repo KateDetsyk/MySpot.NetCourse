@@ -1,14 +1,26 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MySpot.Core.Repositories;
+using MySpot.Infrastructure.DAL.Repositories;
 
 namespace MySpot.Infrastructure.DAL
 {
     internal static class Extention
     {
-        public static IServiceCollection AddPostgres(this IServiceCollection services)
+        private const string OptionsSectionName = "postgres";
+
+        public static IServiceCollection AddPostgres(this IServiceCollection services, IConfiguration configuration)
         {
-            const string connectionString = "Host=localhost;Database=MySpot;Username=postgres;Password=";
-            services.AddDbContext<MySpotDbContext>(x => x.UseNpgsql(connectionString));
+            services.Configure<PostgresOptions>(configuration.GetRequiredSection(OptionsSectionName));
+            var postgresOptions = configuration.GetOptions<PostgresOptions>(OptionsSectionName);
+
+            services.AddDbContext<MySpotDbContext>(x => x.UseNpgsql(postgresOptions.ConnectionString));
+            services.AddScoped<IWeeklyParkingSpotRepository, PostgresWeeklyParkingSpotRepository>();
+            services.AddHostedService<DatabaseInitializer>();
+
+            // EF Core + Npgsql issue
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
             return services;
         }

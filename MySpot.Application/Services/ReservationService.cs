@@ -49,6 +49,7 @@ namespace MySpot.Application.Services
                 var reservation = new Reservation(reservationId, employeeName, licencePlate, new Date(date));
 
                 weeklyParkingSpot.AddReservation(reservation, new Date(CurrentDate()));
+                _weeklyParkingSpotRepository.Update(weeklyParkingSpot);
 
                 return reservation.Id;
             }

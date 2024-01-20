@@ -14,4 +14,5 @@ C:\src\MySpot\MySpot.Infrastructure\obj\Debug\net6.0\MySpot.Infrastructure.cspro
 C:\src\MySpot\MySpot.Infrastructure\obj\Debug\net6.0\MySpot.Infrastructure.dll
 C:\src\MySpot\MySpot.Infrastructure\obj\Debug\net6.0\MySpot.Infrastructure.pdb
 C:\src\MySpot\MySpot.Infrastructure\obj\Debug\net6.0\ref\MySpot.Infrastructure.dll
-C:\src\MySpot\MySpot.Infrastructure\bin\Debug\net6.0\ref\MySpot.Infrastructure.dll
+C:\src\MySpot\MySpot.Infrastructure\obj\Debug\net6.0\MySpot.Infrastructure.sourcelink.json
+C:\src\MySpot\MySpot.Infrastructure\obj\Debug\net6.0\refint\MySpot.Infrastructure.dll
