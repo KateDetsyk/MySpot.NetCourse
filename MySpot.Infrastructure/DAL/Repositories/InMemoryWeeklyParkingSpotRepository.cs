@@ -20,18 +20,25 @@ namespace MySpot.Infrastructure.DAL.Repositories
             };
         }
 
-        public IEnumerable<WeeklyParkingSpot> GetAll() => _weeklyParkingSpots;
-
-        public WeeklyParkingSpot Get(ParkingSpotId id) => _weeklyParkingSpots.SingleOrDefault(x => x.Id == id);
-
-        public void Add(WeeklyParkingSpot weeklyParkingSpot)
+        public async Task<IEnumerable<WeeklyParkingSpot>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            await Task.CompletedTask;
+            return _weeklyParkingSpots;
         }
 
-        public void Update(WeeklyParkingSpot weeklyParkingSpot)
+        public async Task<WeeklyParkingSpot> GetAsync(ParkingSpotId id)
         {
-            throw new NotImplementedException();
+            // TODO I added .value to id, why it doesn't work without it
+            await Task.CompletedTask;
+            return _weeklyParkingSpots.SingleOrDefault(x => x.Id == id.Value);
         }
+
+        public Task AddAsync(WeeklyParkingSpot weeklyParkingSpot)
+        {
+            _weeklyParkingSpots?.Add(weeklyParkingSpot);
+            return Task.CompletedTask;
+        }
+
+        public Task UpdateAsync(WeeklyParkingSpot weeklyParkingSpot) => Task.CompletedTask;
     }
 }

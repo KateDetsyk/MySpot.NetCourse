@@ -17,13 +17,13 @@ public class ReservationsController : ControllerBase
     }
 
     [HttpGet]
-    public ActionResult<ReservationDto[]> Get()
-        => Ok(_reservationService.GetAllWeekly());
+    public async Task<ActionResult<ReservationDto[]>> Get()
+        => Ok(await _reservationService.GetAllWeeklyAsync());
 
     [HttpGet("{id:guid}")]
-    public ActionResult<ReservationDto> Get(Guid id)
+    public async Task<ActionResult<ReservationDto>> Get(Guid id)
     {
-        var reservation = _reservationService.Get(id);
+        var reservation = await _reservationService.GetAsync(id);
 
         if (reservation is null)
         {
@@ -34,9 +34,9 @@ public class ReservationsController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult Post(CreateReservation command)
+    public async Task<ActionResult> Post(CreateReservation command)
     {
-        var id = _reservationService.Create(command with { ReservationId = Guid.NewGuid() });
+        var id = await _reservationService.CreateAsync(command with { ReservationId = Guid.NewGuid() });
 
         if (id is null)
         {
@@ -47,9 +47,9 @@ public class ReservationsController : ControllerBase
     }
 
     [HttpPut("{id:guid}")]
-    public ActionResult Put(Guid id, ChangeReservationLicencePlate command)
+    public async Task<ActionResult> Put(Guid id, ChangeReservationLicencePlate command)
     {
-        var succeded = _reservationService.Update(command with { ReservationId = id });
+        var succeded = await _reservationService.UpdateAsync(command with { ReservationId = id });
 
         if (!succeded)
         {
@@ -60,9 +60,9 @@ public class ReservationsController : ControllerBase
     }
 
     [HttpDelete("{id:guid}")]
-    public ActionResult Delete(Guid id)
+    public async Task<ActionResult> Delete(Guid id)
     {
-        var succeded = _reservationService.Delete(new DeleteReservation(id));
+        var succeded = await _reservationService.DeleteAsync(new DeleteReservation(id));
 
         if (!succeded)
         {

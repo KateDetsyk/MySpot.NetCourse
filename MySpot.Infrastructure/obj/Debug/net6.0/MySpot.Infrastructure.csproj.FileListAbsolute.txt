@@ -10,9 +10,9 @@ C:\src\MySpot\MySpot.Infrastructure\obj\Debug\net6.0\MySpot.Infrastructure.Gener
 C:\src\MySpot\MySpot.Infrastructure\obj\Debug\net6.0\MySpot.Infrastructure.AssemblyInfoInputs.cache
 C:\src\MySpot\MySpot.Infrastructure\obj\Debug\net6.0\MySpot.Infrastructure.AssemblyInfo.cs
 C:\src\MySpot\MySpot.Infrastructure\obj\Debug\net6.0\MySpot.Infrastructure.csproj.CoreCompileInputs.cache
+C:\src\MySpot\MySpot.Infrastructure\obj\Debug\net6.0\MySpot.Infrastructure.sourcelink.json
 C:\src\MySpot\MySpot.Infrastructure\obj\Debug\net6.0\MySpot.Infrastructure.csproj.CopyComplete
 C:\src\MySpot\MySpot.Infrastructure\obj\Debug\net6.0\MySpot.Infrastructure.dll
+C:\src\MySpot\MySpot.Infrastructure\obj\Debug\net6.0\refint\MySpot.Infrastructure.dll
 C:\src\MySpot\MySpot.Infrastructure\obj\Debug\net6.0\MySpot.Infrastructure.pdb
 C:\src\MySpot\MySpot.Infrastructure\obj\Debug\net6.0\ref\MySpot.Infrastructure.dll
-C:\src\MySpot\MySpot.Infrastructure\obj\Debug\net6.0\MySpot.Infrastructure.sourcelink.json
-C:\src\MySpot\MySpot.Infrastructure\obj\Debug\net6.0\refint\MySpot.Infrastructure.dll

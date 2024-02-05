@@ -12,7 +12,7 @@ Content-Type: application/json
 
 {
     "parkingSpotId": "00000000-0000-0000-0000-000000000001",
-    "date": "2023-12-22",
+    "date": "2024-02-02",
     "employeeName": "Joe Dou",
     "licencePlate": "XYZ123"
 }

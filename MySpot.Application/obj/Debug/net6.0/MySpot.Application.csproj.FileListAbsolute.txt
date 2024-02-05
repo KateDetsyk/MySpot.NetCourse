@@ -8,9 +8,9 @@ C:\src\MySpot\MySpot.Application\obj\Debug\net6.0\MySpot.Application.GeneratedMS
 C:\src\MySpot\MySpot.Application\obj\Debug\net6.0\MySpot.Application.AssemblyInfoInputs.cache
 C:\src\MySpot\MySpot.Application\obj\Debug\net6.0\MySpot.Application.AssemblyInfo.cs
 C:\src\MySpot\MySpot.Application\obj\Debug\net6.0\MySpot.Application.csproj.CoreCompileInputs.cache
+C:\src\MySpot\MySpot.Application\obj\Debug\net6.0\MySpot.Application.sourcelink.json
 C:\src\MySpot\MySpot.Application\obj\Debug\net6.0\MySpot.Application.csproj.CopyComplete
 C:\src\MySpot\MySpot.Application\obj\Debug\net6.0\MySpot.Application.dll
+C:\src\MySpot\MySpot.Application\obj\Debug\net6.0\refint\MySpot.Application.dll
 C:\src\MySpot\MySpot.Application\obj\Debug\net6.0\MySpot.Application.pdb
 C:\src\MySpot\MySpot.Application\obj\Debug\net6.0\ref\MySpot.Application.dll
-C:\src\MySpot\MySpot.Application\obj\Debug\net6.0\MySpot.Application.sourcelink.json
-C:\src\MySpot\MySpot.Application\obj\Debug\net6.0\refint\MySpot.Application.dll

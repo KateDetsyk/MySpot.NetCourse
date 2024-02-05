@@ -19,9 +19,9 @@ namespace MySpot.Application.Services
             _weeklyParkingSpotRepository = weeklyParkingSpotRepository;
         }
 
-        public IEnumerable<ReservationDto> GetAllWeekly()
-            => _weeklyParkingSpotRepository
-                .GetAll()
+        public async Task<IEnumerable<ReservationDto>> GetAllWeeklyAsync()
+            => (await _weeklyParkingSpotRepository
+                .GetAllAsync())
                 .SelectMany(x => x.Reservations)
                 .Select(x => new ReservationDto
                 {
@@ -30,16 +30,16 @@ namespace MySpot.Application.Services
                     Date = x.Date.Value.Date
                 });
 
-        public ReservationDto Get(Guid id)
-            => GetAllWeekly().SingleOrDefault(x => x.Id == id);
+        public async Task<ReservationDto> GetAsync(Guid id)
+            => (await GetAllWeeklyAsync()).SingleOrDefault(x => x.Id == id);
 
-        public Guid? Create(CreateReservation command)
+        public async Task<Guid?> CreateAsync(CreateReservation command)
         {
             try
             {
                 var (spotId, reservationId, employeeName, licencePlate, date) = command;
 
-                var weeklyParkingSpot = _weeklyParkingSpotRepository.Get(spotId);
+                var weeklyParkingSpot = await _weeklyParkingSpotRepository.GetAsync(spotId);
 
                 if (weeklyParkingSpot is null)
                 {
@@ -49,7 +49,7 @@ namespace MySpot.Application.Services
                 var reservation = new Reservation(reservationId, employeeName, licencePlate, new Date(date));
 
                 weeklyParkingSpot.AddReservation(reservation, new Date(CurrentDate()));
-                _weeklyParkingSpotRepository.Update(weeklyParkingSpot);
+                await _weeklyParkingSpotRepository.UpdateAsync(weeklyParkingSpot);
 
                 return reservation.Id;
             }
@@ -59,11 +59,11 @@ namespace MySpot.Application.Services
             }
         }
 
-        public bool Update(ChangeReservationLicencePlate command)
+        public async Task<bool> UpdateAsync(ChangeReservationLicencePlate command)
         {
             try
             {
-                var weeklyParkingSpot = GetWeeklyParkingSpotByReservation(command.ReservationId);
+                var weeklyParkingSpot = await GetWeeklyParkingSpotByReservation(command.ReservationId);
 
                 if (weeklyParkingSpot is null)
                 {
@@ -79,7 +79,7 @@ namespace MySpot.Application.Services
                 }
 
                 reservation.ChangeLicencePlate(command.LicencePlate);
-                _weeklyParkingSpotRepository.Update(weeklyParkingSpot);
+                await _weeklyParkingSpotRepository.UpdateAsync(weeklyParkingSpot);
                 return true;
             }
             catch (CustomExcption)
@@ -88,9 +88,9 @@ namespace MySpot.Application.Services
             }
         }
 
-        public bool Delete(DeleteReservation command)
+        public async Task<bool> DeleteAsync(DeleteReservation command)
         {
-            var weeklyParkingSpot = GetWeeklyParkingSpotByReservation(command.ReservationId);
+            var weeklyParkingSpot = await GetWeeklyParkingSpotByReservation(command.ReservationId);
 
             if (weeklyParkingSpot is null)
             {
@@ -98,13 +98,12 @@ namespace MySpot.Application.Services
             }
 
             weeklyParkingSpot.RemoveReservation(command.ReservationId);
-            _weeklyParkingSpotRepository.Update(weeklyParkingSpot);
+            await _weeklyParkingSpotRepository.UpdateAsync(weeklyParkingSpot);
             return true;
         }
 
-        private WeeklyParkingSpot GetWeeklyParkingSpotByReservation(Guid id)
-            => _weeklyParkingSpotRepository
-                .GetAll()
+        private async Task<WeeklyParkingSpot> GetWeeklyParkingSpotByReservation(Guid id)
+            => (await _weeklyParkingSpotRepository.GetAllAsync())
                 .SingleOrDefault(x => x.Reservations.Any(r => r.Id == id));
 
         private DateTime CurrentDate() => _clock.Current();
