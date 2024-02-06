@@ -36,25 +36,15 @@ public class ReservationsController : ControllerBase
     [HttpPost]
     public async Task<ActionResult> Post(CreateReservation command)
     {
-        var id = await _reservationService.CreateAsync(command with { ReservationId = Guid.NewGuid() });
+        await _reservationService.CreateAsync(command with { ReservationId = Guid.NewGuid() });
 
-        if (id is null)
-        {
-            return BadRequest();
-        }
-
-        return CreatedAtAction(nameof(Get), new {Id = id}, default);
+        return CreatedAtAction(nameof(Get), new {Id = command.ReservationId}, default);
     }
 
     [HttpPut("{id:guid}")]
     public async Task<ActionResult> Put(Guid id, ChangeReservationLicencePlate command)
     {
-        var succeded = await _reservationService.UpdateAsync(command with { ReservationId = id });
-
-        if (!succeded)
-        {
-            return BadRequest();
-        }
+        await _reservationService.UpdateAsync(command with { ReservationId = id });
 
         return NoContent();
     }
@@ -62,12 +52,7 @@ public class ReservationsController : ControllerBase
     [HttpDelete("{id:guid}")]
     public async Task<ActionResult> Delete(Guid id)
     {
-        var succeded = await _reservationService.DeleteAsync(new DeleteReservation(id));
-
-        if (!succeded)
-        {
-            return BadRequest();
-        }
+        await _reservationService.DeleteAsync(new DeleteReservation(id));
 
         return NoContent();
     }

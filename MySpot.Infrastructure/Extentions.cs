@@ -1,9 +1,12 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MySpot.Application.Services;
 using MySpot.Core.Repositories;
 using MySpot.Infrastructure.DAL;
 using MySpot.Infrastructure.DAL.Repositories;
+using MySpot.Infrastructure.Exceptions;
 using MySpot.Infrastructure.Services;
 using System.Runtime.CompilerServices;
 
@@ -14,7 +17,9 @@ namespace MySpot.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
+            services.AddControllers();
             services.Configure<AppOptions>(configuration.GetRequiredSection("app"));
+            services.AddSingleton<ExceptionMiddleware>();
 
             services
                 .AddPostgres(configuration)
@@ -22,6 +27,14 @@ namespace MySpot.Infrastructure
                 .AddSingleton<IClock, Clock>();
 
             return services;
+        }
+
+        public static WebApplication UseInfrastructure(this WebApplication app)
+        {
+            app.UseMiddleware<ExceptionMiddleware>();
+            app.MapControllers();
+
+            return app;
         }
 
         public static T GetOptions<T>(this IConfiguration configuration, string sectionName) where T : class, new()
