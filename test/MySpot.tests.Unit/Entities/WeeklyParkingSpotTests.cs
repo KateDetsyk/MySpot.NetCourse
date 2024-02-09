@@ -20,7 +20,6 @@ namespace MySpot.tests.Unit.Entities
 
             // ACT
             var exception = Record.Exception(() => _weeklyParkingSpot.AddReservation(reservation, _now));
-
             // ASSERT
             exception.ShouldNotBeNull();
             exception.ShouldBeOfType<InvalidReservationDateException>();
