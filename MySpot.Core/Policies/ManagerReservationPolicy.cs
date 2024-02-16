@@ -12,6 +12,7 @@ namespace MySpot.Core.Policies
         {
             var tootalEmployeeReservations = weeklyParkingSpots
                 .SelectMany(x => x.Reservations)
+                .OfType<VehicleReservation>()
                 .Count(x => x.EmployeeName == employeeName);
 
             return tootalEmployeeReservations <= 4;

@@ -5,10 +5,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MySpot.Infrastructure.DAL.Migrations
 {
-    /// <inheritdoc />
     public partial class Init : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -17,7 +15,8 @@ namespace MySpot.Infrastructure.DAL.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Week = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true),
-                    Name = table.Column<string>(type: "text", nullable: false)
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Capacity = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -29,10 +28,12 @@ namespace MySpot.Infrastructure.DAL.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    EmployeeName = table.Column<string>(type: "text", nullable: false),
-                    LicencePlate = table.Column<string>(type: "text", nullable: false),
+                    Capacity = table.Column<int>(type: "integer", nullable: false),
                     Date = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
-                    WeeklyParkingSpotId = table.Column<Guid>(type: "uuid", nullable: true)
+                    Type = table.Column<string>(type: "text", nullable: false),
+                    WeeklyParkingSpotId = table.Column<Guid>(type: "uuid", nullable: true),
+                    EmployeeName = table.Column<string>(type: "text", nullable: true),
+                    LicencePlate = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -50,7 +51,6 @@ namespace MySpot.Infrastructure.DAL.Migrations
                 column: "WeeklyParkingSpotId");
         }
 
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

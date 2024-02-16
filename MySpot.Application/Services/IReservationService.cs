@@ -5,10 +5,11 @@ namespace MySpot.Application.Services
 {
     public interface IReservationService
     {
-        Task CreateAsync(CreateReservation command);
+        Task ReserveForVehicleAsync(ReserveParkingSpotForVehicle command);
+        Task ReserveForVehicleCleaningAsync(ReserveParkingSpotForCleaning command);
         Task DeleteAsync(DeleteReservation command);
         Task<ReservationDto> GetAsync(Guid id);
         Task<IEnumerable<ReservationDto>> GetAllWeeklyAsync();
-        Task UpdateAsync(ChangeReservationLicencePlate command);
+        Task ChangeReservationLicencePlateAsync(ChangeReservationLicencePlate command);
     }
 }

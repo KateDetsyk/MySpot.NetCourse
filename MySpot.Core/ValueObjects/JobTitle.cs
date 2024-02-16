@@ -8,6 +8,10 @@
         public const string Manager = nameof(Manager);
         public const string Boss = nameof(Boss);
 
+        private JobTitle(string value) 
+            => Value = value;
+        
+
         public static implicit operator string(JobTitle jobTitle)
             => jobTitle.Value;
 

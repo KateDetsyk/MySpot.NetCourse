@@ -18,7 +18,10 @@ public class ReservationsController : ControllerBase
 
     [HttpGet]
     public async Task<ActionResult<ReservationDto[]>> Get()
-        => Ok(await _reservationService.GetAllWeeklyAsync());
+    {
+        var result = (await _reservationService.GetAllWeeklyAsync());
+        return Ok(await _reservationService.GetAllWeeklyAsync());
+    }
 
     [HttpGet("{id:guid}")]
     public async Task<ActionResult<ReservationDto>> Get(Guid id)
@@ -33,18 +36,26 @@ public class ReservationsController : ControllerBase
         return reservation;
     }
 
-    [HttpPost]
-    public async Task<ActionResult> Post(CreateReservation command)
+    [HttpPost("vehicle")]
+    public async Task<ActionResult> Post(ReserveParkingSpotForVehicle command)
     {
-        await _reservationService.CreateAsync(command with { ReservationId = Guid.NewGuid() });
+        await _reservationService.ReserveForVehicleAsync(command with { ReservationId = Guid.NewGuid() });
 
         return CreatedAtAction(nameof(Get), new {Id = command.ReservationId}, default);
+    }
+
+    [HttpPost("cleaning")]
+    public async Task<ActionResult> Post(ReserveParkingSpotForCleaning command)
+    {
+        await _reservationService.ReserveForVehicleCleaningAsync(command);
+
+        return NoContent();
     }
 
     [HttpPut("{id:guid}")]
     public async Task<ActionResult> Put(Guid id, ChangeReservationLicencePlate command)
     {
-        await _reservationService.UpdateAsync(command with { ReservationId = id });
+        await _reservationService.ChangeReservationLicencePlateAsync(command with { ReservationId = id });
 
         return NoContent();
     }

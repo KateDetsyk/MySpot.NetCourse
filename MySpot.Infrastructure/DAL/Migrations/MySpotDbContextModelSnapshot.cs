@@ -17,7 +17,7 @@ namespace MySpot.Infrastructure.DAL.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.14")
+                .HasAnnotation("ProductVersion", "6.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -27,14 +27,13 @@ namespace MySpot.Infrastructure.DAL.Migrations
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");
 
+                    b.Property<int>("Capacity")
+                        .HasColumnType("integer");
+
                     b.Property<DateTimeOffset>("Date")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("EmployeeName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("LicencePlate")
+                    b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -46,12 +45,17 @@ namespace MySpot.Infrastructure.DAL.Migrations
                     b.HasIndex("WeeklyParkingSpotId");
 
                     b.ToTable("Reservations");
+
+                    b.HasDiscriminator<string>("Type").HasValue("Reservation");
                 });
 
             modelBuilder.Entity("MySpot.Core.Entities.WeeklyParkingSpot", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");
+
+                    b.Property<int>("Capacity")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -63,6 +67,28 @@ namespace MySpot.Infrastructure.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("WeeklyParkingSpots");
+                });
+
+            modelBuilder.Entity("MySpot.Core.Entities.CleaningReservation", b =>
+                {
+                    b.HasBaseType("MySpot.Core.Entities.Reservation");
+
+                    b.HasDiscriminator().HasValue("CleaningReservation");
+                });
+
+            modelBuilder.Entity("MySpot.Core.Entities.VehicleReservation", b =>
+                {
+                    b.HasBaseType("MySpot.Core.Entities.Reservation");
+
+                    b.Property<string>("EmployeeName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("LicencePlate")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasDiscriminator().HasValue("VehicleReservation");
                 });
 
             modelBuilder.Entity("MySpot.Core.Entities.Reservation", b =>

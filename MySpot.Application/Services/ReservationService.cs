@@ -30,16 +30,16 @@ namespace MySpot.Application.Services
                 .Select(x => new ReservationDto
                 {
                     Id = x.Id,
-                    EmployeeName = x.EmployeeName,
+                    EmployeeName = x is VehicleReservation vr ? vr.EmployeeName : null,
                     Date = x.Date.Value.Date
                 });
 
         public async Task<ReservationDto> GetAsync(Guid id)
             => (await GetAllWeeklyAsync()).SingleOrDefault(x => x.Id == id);
 
-        public async Task CreateAsync(CreateReservation command)
+        public async Task ReserveForVehicleAsync(ReserveParkingSpotForVehicle command)
         {
-            var (spotId, reservationId, employeeName, licencePlate, date) = command;
+            var (spotId, reservationId, employeeName, licencePlate, capacity, date) = command;
 
             var week = new Week(_clock.Current());
             var parkingSpotId = new ParkingSpotId(spotId);
@@ -51,7 +51,8 @@ namespace MySpot.Application.Services
                 throw new WeeklyParkingSpotNotFoundException(spotId);
             }
 
-            var reservation = new Reservation(reservationId, employeeName, licencePlate, new Date(date));
+            var reservation = new VehicleReservation(reservationId, employeeName, licencePlate, 
+                capacity, new Date(date));
 
             _parkingReservationService.ReserveSpotForVehicle(weeklyParkingSpots, JobTitle.Employee, 
                 parkingSpotToReserve, reservation);
@@ -59,7 +60,20 @@ namespace MySpot.Application.Services
             await _weeklyParkingSpotRepository.UpdateAsync(parkingSpotToReserve);
         }
 
-        public async Task UpdateAsync(ChangeReservationLicencePlate command)
+        public async Task ReserveForVehicleCleaningAsync(ReserveParkingSpotForCleaning command)
+        {
+            var week = new Week(command.Date);
+            var weeklyParkingSpots = (await _weeklyParkingSpotRepository.GetByWeekAsync(week)).ToList();
+
+            _parkingReservationService.ReserveParkingForCleaning(weeklyParkingSpots, new Date(command.Date));
+            
+            foreach(var parkingSpot in weeklyParkingSpots)
+            {
+                await _weeklyParkingSpotRepository.UpdateAsync(parkingSpot);
+            }
+        }
+
+        public async Task ChangeReservationLicencePlateAsync(ChangeReservationLicencePlate command)
         {
             var weeklyParkingSpot = await GetWeeklyParkingSpotByReservation(command.ReservationId);
 
@@ -69,6 +83,7 @@ namespace MySpot.Application.Services
             }
 
             var reservation = weeklyParkingSpot.Reservations
+                .OfType<VehicleReservation>()
                 .SingleOrDefault(x => x.Id == command.ReservationId);
 
             if (reservation is null)
