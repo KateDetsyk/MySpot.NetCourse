@@ -2,21 +2,16 @@
 
 namespace MySpot.Core.Entities;
 
-public class Reservation
+public abstract class Reservation
 {
     public ReservationId Id { get; }
-    public EmployeeName EmployeeName { get; private set; }
-    public LicencePlate LicencePlate { get; private set; }
+    public Capacity Capacity { get; private set; }
     public Date Date { get; private set; }
 
-    public Reservation(ReservationId id, EmployeeName employeeName, LicencePlate licencePlate, Date date)
+    protected Reservation(ReservationId id, Capacity capacity, Date date)
     {
         Id = id;
-        EmployeeName = employeeName;
-        LicencePlate = licencePlate;
+        Capacity = capacity;
         Date = date;
     }
-
-    public void ChangeLicencePlate(LicencePlate licencePlate) 
-        => LicencePlate = licencePlate;
 }

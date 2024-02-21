@@ -17,6 +17,9 @@ namespace MySpot.Infrastructure.DAL.Configurations
             builder.Property(x => x.Name)
                 .IsRequired()
                 .HasConversion(x => x.Value, x => new ParkingSpotName(x));
+            builder.Property(x => x.Capacity)
+                .IsRequired()
+                .HasConversion(x => x.Value, x => new(x));
         }
     }
 }

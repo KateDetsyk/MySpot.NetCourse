@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using MySpot.Application.Services;
+﻿using MySpot.Core.Abstractions;
 
 namespace MySpot.Infrastructure.Services
 {

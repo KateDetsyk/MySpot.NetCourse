@@ -16,8 +16,8 @@ namespace MySpot.Infrastructure.DAL.Repositories
             _weeklyParkingSpots = _dbContext.WeeklyParkingSpots;
         }
 
-        public async Task<IEnumerable<WeeklyParkingSpot>> GetAllAsync () 
-            => await _weeklyParkingSpots
+        public async Task<IEnumerable<WeeklyParkingSpot>> GetAllAsync()
+        => await _weeklyParkingSpots
             .Include(x => x.Reservations)
             .ToListAsync();
 
