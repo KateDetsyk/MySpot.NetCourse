@@ -1,10 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "i5mnx5tFAsgYSW2umaBTLfQ+xuXjoiYIlvHYVj53zCA1CmSNGOb4eUdCwGEhEUp1yekLbDLTPhRL0vxyKK2VIA==",
+  "dgSpecHash": "6TBuem50seOcEEyyXoR39PaVGmZ7ATAzVBs9FKeTQblJcWmx73x5IPSaafKnoTgvPI+a+zH5JnCJrlIdSIIn4A==",
   "success": true,
   "projectFilePath": "C:\\src\\MySpot\\MySpot.Application\\MySpot.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\detsy\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+    "C:\\Users\\detsy\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\detsy\\.nuget\\packages\\microsoft.extensions.dependencymodel\\6.0.0\\microsoft.extensions.dependencymodel.6.0.0.nupkg.sha512",
+    "C:\\Users\\detsy\\.nuget\\packages\\scrutor\\4.1.0\\scrutor.4.1.0.nupkg.sha512",
+    "C:\\Users\\detsy\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\detsy\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\detsy\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\detsy\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
+    "C:\\Users\\detsy\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

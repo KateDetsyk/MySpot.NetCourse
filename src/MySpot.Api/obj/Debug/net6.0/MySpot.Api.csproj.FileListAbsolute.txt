@@ -94,3 +94,5 @@ C:\src\MySpot\src\MySpot.Api\bin\Debug\net6.0\vi\Humanizer.resources.dll
 C:\src\MySpot\src\MySpot.Api\bin\Debug\net6.0\zh-CN\Humanizer.resources.dll
 C:\src\MySpot\src\MySpot.Api\bin\Debug\net6.0\zh-Hans\Humanizer.resources.dll
 C:\src\MySpot\src\MySpot.Api\bin\Debug\net6.0\zh-Hant\Humanizer.resources.dll
+C:\src\MySpot\src\MySpot.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\src\MySpot\src\MySpot.Api\bin\Debug\net6.0\Scrutor.dll

@@ -62,15 +62,8 @@ C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\Microsoft.VisualStudio.Cod
 C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
-C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
 C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
-C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
-C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
-C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
-C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\Microsoft.TestPlatform.CoreUtilities.dll
 C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
@@ -227,3 +220,5 @@ C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\vi\Humanizer.resources.dll
 C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\zh-CN\Humanizer.resources.dll
 C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\zh-Hans\Humanizer.resources.dll
 C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\zh-Hant\Humanizer.resources.dll
+C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\src\MySpot\test\MySpot.tests.Unit\bin\Debug\net6.0\Scrutor.dll
