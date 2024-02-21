@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MySpot.Infrastructure\MySpot.Infrastructure.csproj" />
+    <ProjectReference Include="..\MySpot.Infrastructure\MySpot.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

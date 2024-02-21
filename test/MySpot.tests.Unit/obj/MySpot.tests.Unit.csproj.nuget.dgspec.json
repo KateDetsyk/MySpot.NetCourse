@@ -4,14 +4,14 @@
     "C:\\src\\MySpot\\test\\MySpot.tests.Unit\\MySpot.tests.Unit.csproj": {}
   },
   "projects": {
-    "C:\\src\\MySpot\\MySpot.Application\\MySpot.Application.csproj": {
+    "C:\\src\\MySpot\\src\\MySpot.Api\\MySpot.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\src\\MySpot\\MySpot.Application\\MySpot.Application.csproj",
-        "projectName": "MySpot.Application",
-        "projectPath": "C:\\src\\MySpot\\MySpot.Application\\MySpot.Application.csproj",
+        "projectUniqueName": "C:\\src\\MySpot\\src\\MySpot.Api\\MySpot.Api.csproj",
+        "projectName": "MySpot.Api",
+        "projectPath": "C:\\src\\MySpot\\src\\MySpot.Api\\MySpot.Api.csproj",
         "packagesPath": "C:\\Users\\detsy\\.nuget\\packages\\",
-        "outputPath": "C:\\src\\MySpot\\MySpot.Application\\obj\\",
+        "outputPath": "C:\\src\\MySpot\\src\\MySpot.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\detsy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,82 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\src\\MySpot\\MySpot.Core\\MySpot.Core.csproj": {
-                "projectPath": "C:\\src\\MySpot\\MySpot.Core\\MySpot.Core.csproj"
+              "C:\\src\\MySpot\\src\\MySpot.Infrastructure\\MySpot.Infrastructure.csproj": {
+                "projectPath": "C:\\src\\MySpot\\src\\MySpot.Infrastructure\\MySpot.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.4, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\src\\MySpot\\src\\MySpot.Application\\MySpot.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\src\\MySpot\\src\\MySpot.Application\\MySpot.Application.csproj",
+        "projectName": "MySpot.Application",
+        "projectPath": "C:\\src\\MySpot\\src\\MySpot.Application\\MySpot.Application.csproj",
+        "packagesPath": "C:\\Users\\detsy\\.nuget\\packages\\",
+        "outputPath": "C:\\src\\MySpot\\src\\MySpot.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\detsy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\src\\MySpot\\src\\MySpot.Core\\MySpot.Core.csproj": {
+                "projectPath": "C:\\src\\MySpot\\src\\MySpot.Core\\MySpot.Core.csproj"
               }
             }
           }
@@ -69,14 +143,14 @@
         }
       }
     },
-    "C:\\src\\MySpot\\MySpot.Core\\MySpot.Core.csproj": {
+    "C:\\src\\MySpot\\src\\MySpot.Core\\MySpot.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\src\\MySpot\\MySpot.Core\\MySpot.Core.csproj",
+        "projectUniqueName": "C:\\src\\MySpot\\src\\MySpot.Core\\MySpot.Core.csproj",
         "projectName": "MySpot.Core",
-        "projectPath": "C:\\src\\MySpot\\MySpot.Core\\MySpot.Core.csproj",
+        "projectPath": "C:\\src\\MySpot\\src\\MySpot.Core\\MySpot.Core.csproj",
         "packagesPath": "C:\\Users\\detsy\\.nuget\\packages\\",
-        "outputPath": "C:\\src\\MySpot\\MySpot.Core\\obj\\",
+        "outputPath": "C:\\src\\MySpot\\src\\MySpot.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\detsy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -130,14 +204,14 @@
         }
       }
     },
-    "C:\\src\\MySpot\\MySpot.Infrastructure\\MySpot.Infrastructure.csproj": {
+    "C:\\src\\MySpot\\src\\MySpot.Infrastructure\\MySpot.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\src\\MySpot\\MySpot.Infrastructure\\MySpot.Infrastructure.csproj",
+        "projectUniqueName": "C:\\src\\MySpot\\src\\MySpot.Infrastructure\\MySpot.Infrastructure.csproj",
         "projectName": "MySpot.Infrastructure",
-        "projectPath": "C:\\src\\MySpot\\MySpot.Infrastructure\\MySpot.Infrastructure.csproj",
+        "projectPath": "C:\\src\\MySpot\\src\\MySpot.Infrastructure\\MySpot.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\detsy\\.nuget\\packages\\",
-        "outputPath": "C:\\src\\MySpot\\MySpot.Infrastructure\\obj\\",
+        "outputPath": "C:\\src\\MySpot\\src\\MySpot.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\detsy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -154,8 +228,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\src\\MySpot\\MySpot.Application\\MySpot.Application.csproj": {
-                "projectPath": "C:\\src\\MySpot\\MySpot.Application\\MySpot.Application.csproj"
+              "C:\\src\\MySpot\\src\\MySpot.Application\\MySpot.Application.csproj": {
+                "projectPath": "C:\\src\\MySpot\\src\\MySpot.Application\\MySpot.Application.csproj"
               }
             }
           }
@@ -177,80 +251,6 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[6.0.4, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\src\\MySpot\\src\\MySpot.Api\\MySpot.Api.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\src\\MySpot\\src\\MySpot.Api\\MySpot.Api.csproj",
-        "projectName": "MySpot.Api",
-        "projectPath": "C:\\src\\MySpot\\src\\MySpot.Api\\MySpot.Api.csproj",
-        "packagesPath": "C:\\Users\\detsy\\.nuget\\packages\\",
-        "outputPath": "C:\\src\\MySpot\\src\\MySpot.Api\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\detsy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {
-              "C:\\src\\MySpot\\MySpot.Infrastructure\\MySpot.Infrastructure.csproj": {
-                "projectPath": "C:\\src\\MySpot\\MySpot.Infrastructure\\MySpot.Infrastructure.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.4, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.2.3, )"
             }
           },
           "imports": [
