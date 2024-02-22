@@ -8848,18 +8848,18 @@
     },
     "MySpot.Application/1.0.0": {
       "type": "project",
-      "path": "../../MySpot.Application/MySpot.Application.csproj",
-      "msbuildProject": "../../MySpot.Application/MySpot.Application.csproj"
+      "path": "../../src/MySpot.Application/MySpot.Application.csproj",
+      "msbuildProject": "../../src/MySpot.Application/MySpot.Application.csproj"
     },
     "MySpot.Core/1.0.0": {
       "type": "project",
-      "path": "../../MySpot.Core/MySpot.Core.csproj",
-      "msbuildProject": "../../MySpot.Core/MySpot.Core.csproj"
+      "path": "../../src/MySpot.Core/MySpot.Core.csproj",
+      "msbuildProject": "../../src/MySpot.Core/MySpot.Core.csproj"
     },
     "MySpot.Infrastructure/1.0.0": {
       "type": "project",
-      "path": "../../MySpot.Infrastructure/MySpot.Infrastructure.csproj",
-      "msbuildProject": "../../MySpot.Infrastructure/MySpot.Infrastructure.csproj"
+      "path": "../../src/MySpot.Infrastructure/MySpot.Infrastructure.csproj",
+      "msbuildProject": "../../src/MySpot.Infrastructure/MySpot.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
