@@ -1,4 +1,5 @@
 @url = http://localhost:5035
+@parkingSpoId = 00000000-0000-0000-0000-000000000001
 
 ###
 GET {{url}}/parking-spots
@@ -7,15 +8,22 @@ GET {{url}}/parking-spots
 GET {{url}}/reservations/cf7fb8f1-2caa-4886-976f-da0e1eb1dd13
 
 ###
-POST {{url}}/reservations/vehicle
+POST {{url}}/parking-spots/{{parkingSpoId}}/reservations/vehicle
 Content-Type: application/json
 
 {
-    "parkingSpotId": "00000000-0000-0000-0000-000000000001",
     "capacity": 6,
     "date": "2024-02-17",
     "employeeName": "Joe Dou",
     "licencePlate": "XYZ123"
+}
+
+###
+POST {{url}}/parking-spots/reservations/cleaning
+Content-Type: application/json
+
+{
+    "date": "2024-02-17"
 }
 
 ###
