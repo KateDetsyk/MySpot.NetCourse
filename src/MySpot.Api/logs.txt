@@ -1,0 +1,113 @@
+2024-04-30 15:43:21.549 +03:00 [INF] Entity Framework Core 6.0.4 initialized 'MySpotDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2024-04-30 15:43:21.964 +03:00 [INF] Executed DbCommand (78ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2024-04-30 15:43:21.995 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2024-04-30 15:43:22.034 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-04-30 15:43:22.060 +03:00 [INF] No migrations were applied. The database is already up to date.
+2024-04-30 15:43:22.356 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "WeeklyParkingSpots" AS w)
+2024-04-30 15:43:22.437 +03:00 [INF] Now listening on: http://localhost:5035
+2024-04-30 15:43:22.440 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-30 15:43:22.441 +03:00 [INF] Hosting environment: Development
+2024-04-30 15:43:22.442 +03:00 [INF] Content root path: C:\src\Course\MySpot.NetCourse\src\MySpot.Api\
+2024-04-30 15:44:18.948 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5035/parking-spots/00000000-0000-0000-0000-000000000001/reservations/vehicle application/json 113
+2024-04-30 15:44:19.014 +03:00 [INF] Executing endpoint 'MySpot.Api.Controllers.ParkingSpotsController.Post (MySpot.Api)'
+2024-04-30 15:44:19.052 +03:00 [INF] Route matched with {action = "Post", controller = "ParkingSpots"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Post(System.Guid, MySpot.Application.Commands.ReserveParkingSpotForVehicle) on controller MySpot.Api.Controllers.ParkingSpotsController (MySpot.Api).
+2024-04-30 15:44:37.060 +03:00 [INF] Started hadling a command: 'System.Func`1[System.String]'...
+2024-04-30 15:44:37.078 +03:00 [INF] Entity Framework Core 6.0.4 initialized 'MySpotDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2024-04-30 15:44:37.544 +03:00 [INF] Executed DbCommand (34ms) [Parameters=[@__week_0='?' (DbType = DateTimeOffset)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."Capacity", w."Name", w."Week", r."Id", r."Capacity", r."Date", r."Type", r."WeeklyParkingSpotId", r."EmployeeName", r."LicencePlate"
+FROM "WeeklyParkingSpots" AS w
+LEFT JOIN "Reservations" AS r ON w."Id" = r."WeeklyParkingSpotId"
+WHERE w."Week" = @__week_0
+ORDER BY w."Id"
+2024-04-30 15:44:37.755 +03:00 [INF] Executed action MySpot.Api.Controllers.ParkingSpotsController.Post (MySpot.Api) in 18695.5669ms
+2024-04-30 15:44:37.770 +03:00 [INF] Executed endpoint 'MySpot.Api.Controllers.ParkingSpotsController.Post (MySpot.Api)'
+2024-04-30 15:44:37.808 +03:00 [ERR] Weekly parking spot with ID: 00000000-0000-0000-0000-000000000001 was not found.
+MySpot.Application.Exceptions.WeeklyParkingSpotNotFoundException: Weekly parking spot with ID: 00000000-0000-0000-0000-000000000001 was not found.
+   at MySpot.Application.Commands.Handlers.ReserveParkingSpotForVehicleHandler.HandleAsync(ReserveParkingSpotForVehicle command) in C:\src\Course\MySpot.NetCourse\src\MySpot.Application\Commands\Handlers\ReserveParkingSpotForVehicleHandler.cs:line 36
+   at MySpot.Infrastructure.DAL.PostgresUnitOfWork.ExecuteAsync(Func`1 action) in C:\src\Course\MySpot.NetCourse\src\MySpot.Infrastructure\DAL\PostgresUnitOfWork.cs:line 18
+   at MySpot.Infrastructure.DAL.PostgresUnitOfWork.ExecuteAsync(Func`1 action) in C:\src\Course\MySpot.NetCourse\src\MySpot.Infrastructure\DAL\PostgresUnitOfWork.cs:line 25
+   at MySpot.Infrastructure.DAL.PostgresUnitOfWork.ExecuteAsync(Func`1 action) in C:\src\Course\MySpot.NetCourse\src\MySpot.Infrastructure\DAL\PostgresUnitOfWork.cs:line 26
+   at MySpot.Infrastructure.DAL.Decorators.UnitOfWorkCommandHandlerDecorator`1.HandleAsync(TCommand command) in C:\src\Course\MySpot.NetCourse\src\MySpot.Infrastructure\DAL\Decorators\UnitOfWorkCommandHandlerDecorator.cs:line 18
+   at MySpot.Infrastructure.Logging.Decorators.LoggingCommandHandlerDecorator`1.HandleAsync(TCommand command) in C:\src\Course\MySpot.NetCourse\src\MySpot.Infrastructure\Logging\Decorators\LoggingCommandHandlerDecorator.cs:line 22
+   at MySpot.Api.Controllers.ParkingSpotsController.Post(Guid parkingSpotId, ReserveParkingSpotForVehicle command) in C:\src\Course\MySpot.NetCourse\src\MySpot.Api\Controllers\ParkingSpotsController.cs:line 37
+   at lambda_method12(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at MySpot.Infrastructure.Exceptions.ExceptionMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\src\Course\MySpot.NetCourse\src\MySpot.Infrastructure\Exceptions\ExceptionMiddleware.cs:line 20
+2024-04-30 15:44:37.893 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5035/parking-spots/00000000-0000-0000-0000-000000000001/reservations/vehicle application/json 113 - 400 - application/json;+charset=utf-8 18962.8504ms
+2024-04-30 15:59:12.229 +03:00 [INF] Entity Framework Core 6.0.4 initialized 'MySpotDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2024-04-30 15:59:12.693 +03:00 [INF] Executed DbCommand (76ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2024-04-30 15:59:12.727 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2024-04-30 15:59:12.753 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-04-30 15:59:12.776 +03:00 [INF] No migrations were applied. The database is already up to date.
+2024-04-30 15:59:13.045 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "WeeklyParkingSpots" AS w)
+2024-04-30 15:59:13.186 +03:00 [INF] Now listening on: http://localhost:5035
+2024-04-30 15:59:13.189 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-30 15:59:13.190 +03:00 [INF] Hosting environment: Development
+2024-04-30 15:59:13.191 +03:00 [INF] Content root path: C:\src\Course\MySpot.NetCourse\src\MySpot.Api\
+2024-04-30 15:59:28.013 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5035/ - -
+2024-04-30 15:59:28.126 +03:00 [INF] Executing endpoint 'MySpot.Api.Controllers.HomeController.Get (MySpot.Api)'
+2024-04-30 15:59:28.151 +03:00 [INF] Route matched with {action = "Get", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Get() on controller MySpot.Api.Controllers.HomeController (MySpot.Api).
+2024-04-30 15:59:28.164 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-04-30 15:59:28.196 +03:00 [INF] Executed action MySpot.Api.Controllers.HomeController.Get (MySpot.Api) in 37.2575ms
+2024-04-30 15:59:28.201 +03:00 [INF] Executed endpoint 'MySpot.Api.Controllers.HomeController.Get (MySpot.Api)'
+2024-04-30 15:59:28.207 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5035/ - - - 200 - text/plain;+charset=utf-8 198.2288ms
+2024-04-30 16:00:06.072 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5035/parking-spots/00000000-0000-0000-0000-000000000001/reservations/vehicle application/json 113
+2024-04-30 16:00:06.095 +03:00 [INF] Executing endpoint 'MySpot.Api.Controllers.ParkingSpotsController.Post (MySpot.Api)'
+2024-04-30 16:00:06.131 +03:00 [INF] Route matched with {action = "Post", controller = "ParkingSpots"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Post(System.Guid, MySpot.Application.Commands.ReserveParkingSpotForVehicle) on controller MySpot.Api.Controllers.ParkingSpotsController (MySpot.Api).
+2024-04-30 16:00:06.192 +03:00 [INF] Started hadling a command: 'System.Func`1[System.String]'...
+2024-04-30 16:00:06.196 +03:00 [INF] Entity Framework Core 6.0.4 initialized 'MySpotDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2024-04-30 16:00:06.632 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[@__week_0='?' (DbType = DateTimeOffset)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."Capacity", w."Name", w."Week", r."Id", r."Capacity", r."Date", r."Type", r."WeeklyParkingSpotId", r."EmployeeName", r."LicencePlate"
+FROM "WeeklyParkingSpots" AS w
+LEFT JOIN "Reservations" AS r ON w."Id" = r."WeeklyParkingSpotId"
+WHERE w."Week" = @__week_0
+ORDER BY w."Id"
+2024-04-30 16:00:06.950 +03:00 [INF] Executed action MySpot.Api.Controllers.ParkingSpotsController.Post (MySpot.Api) in 815.9591ms
+2024-04-30 16:00:06.955 +03:00 [INF] Executed endpoint 'MySpot.Api.Controllers.ParkingSpotsController.Post (MySpot.Api)'
+2024-04-30 16:00:07.041 +03:00 [ERR] Weekly parking spot with ID: 00000000-0000-0000-0000-000000000001 was not found.
+MySpot.Application.Exceptions.WeeklyParkingSpotNotFoundException: Weekly parking spot with ID: 00000000-0000-0000-0000-000000000001 was not found.
+   at MySpot.Application.Commands.Handlers.ReserveParkingSpotForVehicleHandler.HandleAsync(ReserveParkingSpotForVehicle command) in C:\src\Course\MySpot.NetCourse\src\MySpot.Application\Commands\Handlers\ReserveParkingSpotForVehicleHandler.cs:line 36
+   at MySpot.Infrastructure.DAL.PostgresUnitOfWork.ExecuteAsync(Func`1 action) in C:\src\Course\MySpot.NetCourse\src\MySpot.Infrastructure\DAL\PostgresUnitOfWork.cs:line 18
+   at MySpot.Infrastructure.DAL.PostgresUnitOfWork.ExecuteAsync(Func`1 action) in C:\src\Course\MySpot.NetCourse\src\MySpot.Infrastructure\DAL\PostgresUnitOfWork.cs:line 25
+   at MySpot.Infrastructure.DAL.PostgresUnitOfWork.ExecuteAsync(Func`1 action) in C:\src\Course\MySpot.NetCourse\src\MySpot.Infrastructure\DAL\PostgresUnitOfWork.cs:line 26
+   at MySpot.Infrastructure.DAL.Decorators.UnitOfWorkCommandHandlerDecorator`1.HandleAsync(TCommand command) in C:\src\Course\MySpot.NetCourse\src\MySpot.Infrastructure\DAL\Decorators\UnitOfWorkCommandHandlerDecorator.cs:line 18
+   at MySpot.Infrastructure.Logging.Decorators.LoggingCommandHandlerDecorator`1.HandleAsync(TCommand command) in C:\src\Course\MySpot.NetCourse\src\MySpot.Infrastructure\Logging\Decorators\LoggingCommandHandlerDecorator.cs:line 22
+   at MySpot.Api.Controllers.ParkingSpotsController.Post(Guid parkingSpotId, ReserveParkingSpotForVehicle command) in C:\src\Course\MySpot.NetCourse\src\MySpot.Api\Controllers\ParkingSpotsController.cs:line 37
+   at lambda_method14(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at MySpot.Infrastructure.Exceptions.ExceptionMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\src\Course\MySpot.NetCourse\src\MySpot.Infrastructure\Exceptions\ExceptionMiddleware.cs:line 20
+2024-04-30 16:00:07.153 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5035/parking-spots/00000000-0000-0000-0000-000000000001/reservations/vehicle application/json 113 - 400 - application/json;+charset=utf-8 1081.8434ms

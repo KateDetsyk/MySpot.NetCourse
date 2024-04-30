@@ -5,6 +5,7 @@ using MySpot.Application.Abstractions;
 using MySpot.Core.Abstractions;
 using MySpot.Infrastructure.DAL;
 using MySpot.Infrastructure.Exceptions;
+using MySpot.Infrastructure.Logging;
 using MySpot.Infrastructure.Services;
 using System.Runtime.CompilerServices;
 
@@ -23,6 +24,8 @@ namespace MySpot.Infrastructure
                 .AddPostgres(configuration)
                 //.AddSingleton<IWeeklyParkingSpotRepository, InMemoryWeeklyParkingSpotRepository>()
                 .AddSingleton<IClock, Clock>();
+
+            services.AddCustomLogging();
 
             var infrastructureAssembly = typeof(AppOptions).Assembly;
 

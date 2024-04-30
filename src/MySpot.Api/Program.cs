@@ -1,8 +1,7 @@
 using MySpot.Application;
 using MySpot.Core;
-using MySpot.Core.Exceptions;
 using MySpot.Infrastructure;
-using MySpot.Infrastructure.Exceptions;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +9,16 @@ builder.Services
     .AddCore()
     .AddAplication()
     .AddInfrastructure(builder.Configuration);
+
+builder.Host.UseSerilog(((context, loggerConfiguration) =>
+{
+    loggerConfiguration.WriteTo
+    .Console()
+    .WriteTo
+    .File("logs.txt")
+    .WriteTo
+    .Seq("http://localhost:5341");
+}));
 
 var app = builder.Build();
 

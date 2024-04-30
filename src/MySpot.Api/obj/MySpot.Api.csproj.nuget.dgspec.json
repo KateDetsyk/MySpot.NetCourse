@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\src\\MySpot\\src\\MySpot.Api\\MySpot.Api.csproj": {}
+    "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Api\\MySpot.Api.csproj": {}
   },
   "projects": {
-    "C:\\src\\MySpot\\src\\MySpot.Api\\MySpot.Api.csproj": {
+    "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Api\\MySpot.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\src\\MySpot\\src\\MySpot.Api\\MySpot.Api.csproj",
+        "projectUniqueName": "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Api\\MySpot.Api.csproj",
         "projectName": "MySpot.Api",
-        "projectPath": "C:\\src\\MySpot\\src\\MySpot.Api\\MySpot.Api.csproj",
+        "projectPath": "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Api\\MySpot.Api.csproj",
         "packagesPath": "C:\\Users\\detsy\\.nuget\\packages\\",
-        "outputPath": "C:\\src\\MySpot\\src\\MySpot.Api\\obj\\",
+        "outputPath": "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\detsy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\src\\MySpot\\src\\MySpot.Infrastructure\\MySpot.Infrastructure.csproj": {
-                "projectPath": "C:\\src\\MySpot\\src\\MySpot.Infrastructure\\MySpot.Infrastructure.csproj"
+              "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Infrastructure\\MySpot.Infrastructure.csproj": {
+                "projectPath": "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Infrastructure\\MySpot.Infrastructure.csproj"
               }
             }
           }
@@ -78,14 +78,14 @@
         }
       }
     },
-    "C:\\src\\MySpot\\src\\MySpot.Application\\MySpot.Application.csproj": {
+    "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Application\\MySpot.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\src\\MySpot\\src\\MySpot.Application\\MySpot.Application.csproj",
+        "projectUniqueName": "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Application\\MySpot.Application.csproj",
         "projectName": "MySpot.Application",
-        "projectPath": "C:\\src\\MySpot\\src\\MySpot.Application\\MySpot.Application.csproj",
+        "projectPath": "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Application\\MySpot.Application.csproj",
         "packagesPath": "C:\\Users\\detsy\\.nuget\\packages\\",
-        "outputPath": "C:\\src\\MySpot\\src\\MySpot.Application\\obj\\",
+        "outputPath": "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\detsy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -102,8 +102,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\src\\MySpot\\src\\MySpot.Core\\MySpot.Core.csproj": {
-                "projectPath": "C:\\src\\MySpot\\src\\MySpot.Core\\MySpot.Core.csproj"
+              "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Core\\MySpot.Core.csproj": {
+                "projectPath": "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Core\\MySpot.Core.csproj"
               }
             }
           }
@@ -143,14 +143,14 @@
         }
       }
     },
-    "C:\\src\\MySpot\\src\\MySpot.Core\\MySpot.Core.csproj": {
+    "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Core\\MySpot.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\src\\MySpot\\src\\MySpot.Core\\MySpot.Core.csproj",
+        "projectUniqueName": "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Core\\MySpot.Core.csproj",
         "projectName": "MySpot.Core",
-        "projectPath": "C:\\src\\MySpot\\src\\MySpot.Core\\MySpot.Core.csproj",
+        "projectPath": "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Core\\MySpot.Core.csproj",
         "packagesPath": "C:\\Users\\detsy\\.nuget\\packages\\",
-        "outputPath": "C:\\src\\MySpot\\src\\MySpot.Core\\obj\\",
+        "outputPath": "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\detsy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -204,14 +204,14 @@
         }
       }
     },
-    "C:\\src\\MySpot\\src\\MySpot.Infrastructure\\MySpot.Infrastructure.csproj": {
+    "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Infrastructure\\MySpot.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\src\\MySpot\\src\\MySpot.Infrastructure\\MySpot.Infrastructure.csproj",
+        "projectUniqueName": "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Infrastructure\\MySpot.Infrastructure.csproj",
         "projectName": "MySpot.Infrastructure",
-        "projectPath": "C:\\src\\MySpot\\src\\MySpot.Infrastructure\\MySpot.Infrastructure.csproj",
+        "projectPath": "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Infrastructure\\MySpot.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\detsy\\.nuget\\packages\\",
-        "outputPath": "C:\\src\\MySpot\\src\\MySpot.Infrastructure\\obj\\",
+        "outputPath": "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\detsy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -228,8 +228,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\src\\MySpot\\src\\MySpot.Application\\MySpot.Application.csproj": {
-                "projectPath": "C:\\src\\MySpot\\src\\MySpot.Application\\MySpot.Application.csproj"
+              "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Application\\MySpot.Application.csproj": {
+                "projectPath": "C:\\src\\Course\\MySpot.NetCourse\\src\\MySpot.Application\\MySpot.Application.csproj"
               }
             }
           }
@@ -251,6 +251,30 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[6.0.4, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Serilog.Extensions.Logging": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Serilog.Sinks.Seq": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             }
           },
           "imports": [
