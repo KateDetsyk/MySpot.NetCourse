@@ -29,7 +29,7 @@ namespace MySpot.Infrastructure.Exceptions
         {
             var (statusCode, error) = exception switch
             {
-                CustomExcption => (StatusCodes.Status400BadRequest, 
+                CustomException => (StatusCodes.Status400BadRequest, 
                     new Error(exception.GetType().Name.Underscore().Replace("_exception", string.Empty), exception.Message)),
                 _ => (StatusCodes.Status500InternalServerError, new Error("error", "There was an error.")),
             };

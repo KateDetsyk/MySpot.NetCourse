@@ -1,6 +1,6 @@
 ﻿namespace MySpot.Core.Exceptions
 {
-    public class InvalidLicencePlateException : CustomExcption
+    public class InvalidLicencePlateException : CustomException
     {
         public string LicencePlate { get; set; }
 

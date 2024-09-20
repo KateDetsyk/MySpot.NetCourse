@@ -2,7 +2,7 @@
 
 namespace MySpot.Application.Exceptions
 {
-    public sealed class WeeklyParkingSpotNotFoundException : CustomExcption
+    public sealed class WeeklyParkingSpotNotFoundException : CustomException
     {
         public Guid? Id { get; }
 

@@ -1,6 +1,6 @@
 ﻿namespace MySpot.Core.Exceptions
 {
-    public sealed class InvalidCapacityException : CustomExcption
+    public sealed class InvalidCapacityException : CustomException
     {
         public int Capacity { get; }
 

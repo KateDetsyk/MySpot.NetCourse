@@ -1,6 +1,6 @@
 ﻿namespace MySpot.Core.Exceptions
 {
-    public class InvalidEntityIdException : CustomExcption
+    public class InvalidEntityIdException : CustomException
     {
         public Guid Id { get; set; }
 

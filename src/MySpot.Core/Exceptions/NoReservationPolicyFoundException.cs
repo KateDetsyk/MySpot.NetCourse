@@ -2,7 +2,7 @@
 
 namespace MySpot.Core.Exceptions
 {
-    public sealed  class NoReservationPolicyFoundException : CustomExcption
+    public sealed  class NoReservationPolicyFoundException : CustomException
     {
         public JobTitle JobTitle { get; }
 

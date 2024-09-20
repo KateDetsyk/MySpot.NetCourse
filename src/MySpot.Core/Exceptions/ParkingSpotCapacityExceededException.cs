@@ -2,7 +2,7 @@
 
 namespace MySpot.Core.Exceptions
 {
-    public sealed class ParkingSpotCapacityExceededException : CustomExcption
+    public sealed class ParkingSpotCapacityExceededException : CustomException
     {
         public ParkingSpotId ParkingSpotId { get; }
 

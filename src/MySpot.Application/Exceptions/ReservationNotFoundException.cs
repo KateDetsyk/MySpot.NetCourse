@@ -2,7 +2,7 @@
 
 namespace MySpot.Application.Exceptions
 {
-    public sealed class ReservationNotFoundException : CustomExcption
+    public sealed class ReservationNotFoundException : CustomException
     {
         public Guid Id { get; }
 

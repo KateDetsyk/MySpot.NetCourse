@@ -206,3 +206,13 @@ C:\src\Course\MySpot.NetCourse\src\MySpot.Api\bin\Debug\net6.0\Serilog.Sinks.Fil
 C:\src\Course\MySpot.NetCourse\src\MySpot.Api\bin\Debug\net6.0\Serilog.Sinks.PeriodicBatching.dll
 C:\src\Course\MySpot.NetCourse\src\MySpot.Api\bin\Debug\net6.0\Serilog.Sinks.Seq.dll
 C:\src\Course\MySpot.NetCourse\src\MySpot.Api\bin\Debug\net6.0\System.Threading.Channels.dll
+C:\src\Course\MySpot.NetCourse\src\MySpot.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\src\Course\MySpot.NetCourse\src\MySpot.Api\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\src\Course\MySpot.NetCourse\src\MySpot.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\src\Course\MySpot.NetCourse\src\MySpot.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\src\Course\MySpot.NetCourse\src\MySpot.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\src\Course\MySpot.NetCourse\src\MySpot.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\src\Course\MySpot.NetCourse\src\MySpot.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\src\Course\MySpot.NetCourse\src\MySpot.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\src\Course\MySpot.NetCourse\src\MySpot.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.ReDoc.dll
+C:\src\Course\MySpot.NetCourse\src\MySpot.Api\bin\Debug\net6.0\appsettings.test.json

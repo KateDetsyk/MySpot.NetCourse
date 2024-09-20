@@ -2,7 +2,7 @@
 
 namespace MySpot.Core.Exceptions
 {
-    public sealed class CannotReserveParkingSpotException : CustomExcption
+    public sealed class CannotReserveParkingSpotException : CustomException
     {
         public ParkingSpotId ParkingSpotId { get; }
 
